@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+server:
+  port: 8087
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+#config-client 如果更改端口号，则配置文件名要用bootstrap。否决读取不到配置文件
